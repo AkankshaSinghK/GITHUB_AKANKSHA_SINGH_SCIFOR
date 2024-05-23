@@ -1,0 +1,116 @@
+Ans 1: In HTML, there are various formatting tags used to apply styles and structure to text and other content. 
+There are different tags along with there purposes:
+
+1. Text formatting tags
+i) <b> use to bold the text.
+ii) <strong> usually used to bold the important text.
+iii) <i> used to italic the text.
+iv) <em> used to emphasized text.
+v) <small> used to smaller text.
+vi) <mark> used to highlight the text.
+
+2. Structural Tags
+i) <p> used for paragraph
+ii) <br> used for line break
+iii) <hr> used for horizontal break.
+
+3. List Tags
+
+i) <ul> used for unordered list
+ii) <ol> used for ordered list
+iii) <dl> used for definition list
+iv) <li> used for list items
+
+Ans 2. To merge two rows or columns into a single row or column in an HTML table, we need to use the rowspan and colspan attributes.
+
+Code for demonstrating colspan and rowspan:
+
+<html>
+<head>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <th rowspan="2">Name</th>
+    <th colspan="2">Contact Info</th>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>Phone</td>
+  </tr>
+  <tr>
+    <td>Ram</td>
+    <td>ram@gmail.com</td>
+    <td>7896541023</td>
+  </tr>
+  <tr>
+    <td>Gaurav</td>
+    <td>gaurav@gmail.com</td>
+    <td>8796541023</td>
+  </tr>
+</table>
+</body>
+</html>
+
+Ans 3.  Cellspacing : It specifies the space between the borders of adjacent table cells.
+		      It is used to create a gap between table cells.
+		      It adds space between the cells.
+
+	Syntax: <table cellspacing="10">
+  		<!-- Table content -->
+		</table>
+
+	Cellpadding : It specifies the space between the cell content and the cell border.
+		      It is used to add padding inside the cells.
+		      It adds space between the cell content and its border.
+
+	Syntax: <table cellpadding="10">
+ 		<!-- Table content -->
+		</table>
+
+Ans 4. Semantic elements in HTML are tags that provide meaning to the content they enclose, 	making the structure and purpose of the content clear both to the browser and to 	developers. These elements help with the readability of the code and improve 	accessibility, SEO, and the overall structure of the webpage.
+
+	Commonly used Semantic Elements are as follows:
+
+	i) <header>
+	ii) <nav>
+	iii) <main>
+	iv) <section>
+	v) <article>
+	vi) <aside>
+	vii) <footer>
+	viii) <figure>
+	ix) <time>
+	x) <figcaption>
+	xi) <mark>
+
+Ans 5. index.html
+<html >
+<head>
+       <title>Background Image Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to My Webpage</h1>
+    <p>This page has a background image.</p>
+</body>
+</html>
+
+style.css
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    
+}
+
+Ans 6.
+The alt attribute in HTML is used within the <img> tag to provide alternative text for an image. This alternative text serves several important purposes:
+
+i) Accessibility: Screen readers use the alt text to describe the image to visually impaired users, making the content more accessible.
+
+ii) Fallback: If the image fails to load, the alt text is displayed in its place, providing context to users about what the image was supposed to convey.
+
+Syntax: <img src="image.jpg" alt="Description of the image">
+
