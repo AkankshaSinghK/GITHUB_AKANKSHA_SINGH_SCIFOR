@@ -8,14 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css"
     />
-    <style>
-      .margin-top {
-        margin-top: 20px;
-      }
-      .bold {
-        font-weight: bold;
-      }
-    </style>
+    
   </head>
   <body>
     <div class="grid-container margin-top">
@@ -27,7 +20,7 @@
               <div class="cell small-12">
                 <label class="bold"
                   >Name
-                  <input type="text" placeholder="Enter your name" required />
+                  <input type="text" placeholder="Enter your name" minlength="4" required />
                 </label>
               </div>
               <div class="cell small-12">
@@ -42,6 +35,7 @@
                   <input
                     type="password"
                     placeholder="Enter your password"
+                    minlength="8"
                     required
                   />
                 </label>
