@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Scope</title>
+</head>
+<body>
+    <script>
+        var varString = "I am a var string";
+        let letString = "I am a let string";
+        const constString = "I am a const string";
+
+        document.write("<strong>Global Scope:</strong><br>");
+        document.write("varString: " + varString + "<br>");
+        document.write("letString: " + letString + "<br>");
+        document.write("constString: " + constString + "<br><br>");
+
+         // Block to demonstrate scope difference between var and let
+         {
+            var varInBlock = "I am declared with var inside a block";
+            let letInBlock = "I am declared with let inside a block";
+
+            document.write("<strong>Inside Block:</strong><br>");
+            document.write("varInBlock: " + varInBlock + "<br>");
+            document.write("letInBlock: " + letInBlock + "<br>");
+        }
+
+        document.write("<br><strong>Outside Block:</strong><br>");
+        document.write("varInBlock: " + varInBlock + "<br>");
+        document.write("letInBlock is not accessible outside the block" + letInBlock);
+    </script>
+</body>
+</html>
