@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calculator">
+        
+        <div class="input-fields">
+            <input type="number" id="firstOperand" placeholder="First Number">
+            <select id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" id="secondOperand" placeholder="Second Number"><br>
+            <div>
+                <input type="text" id="display" disabled>
+            </div>
+            
+        </div>
+        <div class="buttons">
+            <button onclick="calculate()">Calculate</button>
+            <button onclick="clearDisplay()">Clear</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</html>
