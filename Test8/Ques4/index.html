@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Formatting</title>
+  </head>
+  <body>
+    <h1>String Formatting </h1>
+
+    <script>
+      function formatString(inputString) {
+        //  Convert the entire string to uppercase
+        const upperCaseString = inputString.toUpperCase();
+
+        //  Convert the entire string to lowercase
+        const lowerCaseString = inputString.toLowerCase();
+
+        // Extract a substring from index 2 to 5 (inclusive)
+        const substring = inputString.substring(2, 6);
+
+        // Print original string
+        document.write("<h2>Original String:</h2>");
+        document.write("<p>" + inputString + "</p>");
+
+        // Print uppercase string
+        document.write("<h2>Uppercase String:</h2>");
+        document.write("<p>" + upperCaseString + "</p>");
+
+        // Print lowercase string
+        document.write("<h2>Lowercase String:</h2>");
+        document.write("<p>" + lowerCaseString + "</p>");
+
+        // Print extracted substring
+        document.write("<h2>Substring from index 2 to 5:</h2>");
+        document.write("<p>" + substring + "</p>");
+      }
+
+
+      const input = "HelloWorld123";
+
+      // Call formatString function
+      const result = formatString(input);
+
+    
+    
+    </script>
+  </body>
+</html>

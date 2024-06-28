@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Manipulation</title>
+</head>
+<body>
+  <h1>Date Manipulation Example</h1>
+
+  <script>
+    function manipulateDate(date) {
+      //  Get the current month from the date object
+      const currentMonth = date.getMonth(); // January is 0, December is 11
+
+      //  Set the month of the date object to the next month
+      date.setMonth(currentMonth + 1);
+
+      // Set the date of the date object to the 15th of the current month
+      date.setDate(15);
+
+      //  Get the full year of the adjusted date object
+      const fullYear = date.getFullYear();
+
+      return {
+        currentMonth: currentMonth + 1, 
+        nextMonth: date.getMonth() + 1, 
+        date: date.getDate(),
+        fullYear: fullYear
+      };
+    }
+
+    const inputDate = new Date(); // Using the current date for the example
+    const result = manipulateDate(inputDate);
+
+    // Printing the results using document.write
+    document.write(`<p>Original Month: ${result.currentMonth}</p>`);
+    document.write(`<p>Next Month (adjusted): ${result.nextMonth}</p>`);
+    document.write(`<p>Date set to: ${result.date}</p>`);
+    document.write(`<p>Full Year of adjusted date: ${result.fullYear}</p>`);
+  </script>
+</body>
+</html>

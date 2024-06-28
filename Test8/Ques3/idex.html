@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse and Sort Array</title>
+  </head>
+  <body>
+    <h1>Reverse and Sort Array </h1>
+
+    <script>
+      function reverseAndSortArray(arr) {
+        // Print original array
+        document.write("<h2>Original Array:</h2>");
+        document.write("<p>" + arr.join(", ") + "</p>");
+
+        //  Reverse the order of elements in the array
+        const reversedArray = arr.slice().reverse();
+        document.write("<h2>Reversed Array:</h2>");
+        document.write("<p>" + reversedArray.join(", ") + "</p>");
+
+        //  Sort the reversed array in alphabetical order
+        const sortedArray = reversedArray.slice().sort();
+        document.write("<h2>Sorted Reversed Array:</h2>");
+        document.write("<p>" + sortedArray.join(", ") + "</p>");
+
+        //  Return the sorted array
+        return sortedArray;
+      }
+
+
+      const characters = ["z", "a", "c", "b"];
+
+      // Call reverseAndSortArray function
+      const result = reverseAndSortArray(characters);
+
+      // Print returned sorted array
+      document.write("<h2>Returned Sorted Array:</h2>");
+      document.write("<p>" + result.join(", ") + "</p>");
+    </script>
+  </body>
+</html>

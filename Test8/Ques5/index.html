@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Manipulation</title>
+  </head>
+  <body>
+    <h1>Array Manipulation</h1>
+
+    <script>
+      function manipulateArray(arr) {
+        // Print original array
+        document.write("<h2>Original Array:</h2>");
+        document.write("<p>" + arr.join(", ") + "</p>");
+        //  Add a new string "VOLVO" to the end of the array
+        arr.push("VOLVO");
+        document.write("<h2>After adding Volvo to the Array:</h2>");
+        document.write("<p>" + arr.join(", ") + "</p>");
+
+        //  Remove the last element from the array
+        arr.pop();
+        document.write("<h2>After removing last Element from the Array:</h2>");
+        document.write("<p>" + arr.join(", ") + "</p>");
+
+        //  Iterate over each element in the array and convert each element to uppercase
+        arr = arr.map((element) => element.toUpperCase());
+        document.write("<h2>Array into Uuppercase:</h2>");
+        document.write("<p>" + arr + "</p>");
+
+        //  Join all elements of the array into a single string separated by commas
+        const joinedString = arr.join(", ");
+
+        document.write("<h2>Returned Manipulated Array:</h2>");
+        document.write("<p>" + joinedString + "</p>");
+      }
+
+      const inputArray = ["apple", "banana", "cherry"];
+
+      // Call manipulateArray function
+      const result = manipulateArray(inputArray);
+    </script>
+  </body>
+</html>

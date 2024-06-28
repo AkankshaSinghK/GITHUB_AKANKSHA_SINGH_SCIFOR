@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character Count</title>
+  </head>
+  <body>
+
+    <script>
+      function countCharacters(arr) {
+        let charCount = {};
+
+        // Loop through each character in the array
+        arr.forEach((char) => {
+          // Check if the character is already in the charCount object
+          if (charCount[char]) {
+            charCount[char]++; // Increment count if character exists
+          } else {
+            charCount[char] = 1; // Initialize count to 1 if character doesn't exist
+          }
+        });
+
+        return charCount;
+      }
+
+    
+      const characters = ["a", "b", "c", "a", "b", "c", "a", "b", "d"];
+      const result = countCharacters(characters);
+
+      // Printing the results using document.write
+      document.write("<h2>Character Counts:</h2>");
+      document.write("<ul>");
+      for (let char in result) {
+        document.write(`<li>${char}: ${result[char]}</li>`);
+      }
+      document.write("</ul>");
+    </script>
+  </body>
+</html>
