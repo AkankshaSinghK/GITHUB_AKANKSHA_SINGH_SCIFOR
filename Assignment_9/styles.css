@@ -1,0 +1,81 @@
+/* Basic CSS styles for the page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #0ef;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #000;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a017b8;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ce6de6;
+}
+
+#ajaxButton{
+    font-size: medium;
+}
+
+#fetchButton{
+    font-size: medium;
+}
+
+#dataDisplay {
+    margin-top: 20px;
+    padding: 20px;
+    background-color:blanchedalmond;
+    border: 1px solid #00000016;
+    border-radius: 10px;
+    max-width: 100%;
+    overflow-y: auto;
+    max-height: 400px;
+    text-align: left;
+}
+
+#dataDisplay h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#dataDisplay .result {
+    background-color:blanchedalmond;
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#dataDisplay p {
+    margin: 5px 0;
+    color: #495057;
+}
