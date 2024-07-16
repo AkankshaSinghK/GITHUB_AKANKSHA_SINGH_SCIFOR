@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details with React</title>
+    <!-- React and ReactDOM CDN links -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel CDN link for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- React component and rendering script -->
+    <script type="text/babel">
+        class Student extends React.Component {
+            constructor(props) {
+                super(props);
+                // Initialize state with props values
+                this.state = {
+                    name: props.name,
+                    age: props.age,
+                    course: props.course,
+                    newName: ''
+                };
+            }
+
+            handleNameChange = (event) => {
+                this.setState({ newName: event.target.value });
+            };
+
+            updateName = () => {
+                this.setState({ name: this.state.newName, newName: '' });
+            };
+
+            render() {
+                return (
+                    <div>
+                        <h1>Student Details</h1>
+                        <p><strong>Name:</strong> {this.state.name}</p>
+                        <p><strong>Age:</strong> {this.state.age}</p>
+                        <p><strong>Course:</strong> {this.state.course}</p>
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Enter new name"
+                                value={this.state.newName}
+                                onChange={this.handleNameChange}
+                            />
+                            <button onClick={this.updateName}>Change Name</button>
+                        </div>
+                    </div>
+                );
+            }
+        }
+
+        class App extends React.Component {
+            render() {
+                return (
+                    <div className="App">
+                        <Student name="John Doe" age={20} course="Computer Science" />
+                    </div>
+                );
+            }
+        }
+
+        // Render the App component into the root div
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
