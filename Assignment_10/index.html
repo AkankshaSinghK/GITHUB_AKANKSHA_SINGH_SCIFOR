@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Component</title>
+  </head>
+  <body>
+    <!-- React and ReactDOM CDN links -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Babel CDN link for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class Student extends React.Component {
+        render() {
+          return (
+            <div>
+              <h2>First Name: Akanksha</h2>
+              <h2>Last Name: Singh</h2>
+            </div>
+          );
+        }
+      }
+
+      function Display() {
+        return (
+          <div>
+            <Student />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<Display />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
