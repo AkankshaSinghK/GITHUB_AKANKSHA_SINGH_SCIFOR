@@ -1,0 +1,99 @@
+<!-- highlight the input field using useEffect hook -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use useRef and useEffect Hooks</title>
+    <!-- React and ReactDOM CDN links -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Babel CDN link for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Adding some basic styling -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        text-align: center;
+      }
+      input[type="text"] {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        width: 200px;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      input[type="text"].highlight {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React component and rendering script -->
+    <script type="text/babel">
+      function App() {
+         const inputRef = React.useRef(null);
+         const [highlight, setHighlight] = React.useState(false);
+
+         React.useEffect(() => {
+             if (highlight) {
+              inputRef.current.focus();
+              inputRef.current.classList.add('highlight');
+             } else {
+               inputRef.current.classList.remove('highlight');
+             }
+         });
+
+         const highlightInputField = () => {
+            setHighlight(true);
+         };
+
+         return (
+            <div className="container">
+               <input type="text" ref={inputRef} />
+               <button onClick={highlightInputField}>Highlight Input Field</button>
+            </div>
+         );
+      }
+
+      // Render the App component into the root div
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
