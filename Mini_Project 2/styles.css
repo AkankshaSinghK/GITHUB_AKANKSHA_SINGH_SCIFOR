@@ -262,10 +262,100 @@ span{
       flex: 1 1 100%;
     }
   }
+
+  .certificate {
+    text-align: center;
+    background: var(--second-bg-color);
+  }
+  
+  .certificate .heading {
+    margin-bottom: 30px;
+  }
+  
+  .certificate-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+  }
+  
+  .certificate-box {
+    background: var(--main-color);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 250px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 1rem var(--bg-color);;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+  }
+  
+  .certificate-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px var(--main-color);
+  }
+  
+  .certificate-box img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .certificate-box img:hover{
+    transform: scale(1.1);
+  }
+  
+  .certificate-content {
+    padding: 15px;
+  }
+  
+  .certificate-content h4 {
+    font-size: 1.50rem;
+    margin-bottom: 10px;
+    color: var(--text-second-color);
+  }
+  
+  .certificate-content p {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: var(--text-second-color);
+  }
+  
+  .certificate-content a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+  }
+  
+  .certificate-content a:hover {
+    background:var(--main-color);
+    border: 1px solid var(--text-second-color);
+  }
+
+  .certificate-content a i{
+    font-size: 2rem;
+    color: var(--second-bg-color);
+
+}
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .certificate-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
   
 
 .project{
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .project h2{
@@ -346,6 +436,10 @@ span{
 
 }
 
+.contact{
+    background: var(--second-bg-color);
+}
+
 .contact h2{
     margin-bottom: 3rem;
 }
@@ -368,7 +462,7 @@ span{
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     border-radius: .8rem;
     margin: .7rem 0;
 }
@@ -430,6 +524,9 @@ span{
         padding: 10rem 3% 2rem;
     }
     .skills{
+        padding-bottom: 7rem; 
+     }
+     .certificate{
         padding-bottom: 7rem; 
      }
     .project{
@@ -504,6 +601,10 @@ span{
     grid-template-columns: repeat(2,1fr);
 
 }
+.certificate-container{
+    grid-template-columns: repeat(2,1fr);
+
+}
 }
 
 @media (max-width:617px){
@@ -512,6 +613,11 @@ span{
     }
     .skills-container{
         grid-template-columns: 1fr;
+    }
+    .certificate-container{
+        grid-template-columns: 1fr;
+        
+    
     }
 }
 

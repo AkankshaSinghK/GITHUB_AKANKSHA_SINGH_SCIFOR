@@ -48,9 +48,9 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .project-box,.skills-container, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img, .project-box,.skills-container, .contact form,.certificate-container', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-ScrollReveal().reveal('.home-content p, .about-content p,.skill-box', { origin: 'right' });
+ScrollReveal().reveal('.home-content p, .about-content p,.skill-box,.certificate-box', { origin: 'right' });
 
 /* ============ typed js =============== */
 

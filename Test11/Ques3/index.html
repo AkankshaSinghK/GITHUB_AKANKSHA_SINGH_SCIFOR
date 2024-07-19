@@ -1,0 +1,90 @@
+<!-- WRITE A COMPONENT THAT FETCHES AND DISPLAYS A LIST OF USERS FROM AN API WHEN THE COMPONENT MOUNTS USING THE USEEFFECT HOOK. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISPLAYS A LIST OF USERS FROM AN API USING USEEFFECT HOOK</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 50%;
+      max-width: 400px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background-color: beige;
+    }
+    h2 {
+      text-align: center;
+      color: blueviolet;
+    }
+    ul {
+      list-style-type: decimal;
+      padding: 40px;
+      color: chocolate;
+    }
+    li {
+      padding: 10px;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="root" class="container"></div>
+
+  <!-- React and ReactDOM CDN links -->
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+  <!-- Babel CDN link for JSX transformation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const UsersList = () => {
+      const [users, setUsers] = useState([]);
+
+      useEffect(() => {
+        fetch('https://dummyjson.com/users')
+          .then(response => response.json())
+          .then(data => setUsers(data.users))
+          .catch(error => console.error('Error fetching users:', error));
+      }, []);
+
+      return (
+        <div>
+          <h2>Users List</h2>
+          <ul>
+            {users.map(user => (
+              <li key={user.id}>
+                {user.firstName} {user.lastName}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    };
+
+    ReactDOM.render(<UsersList />, document.getElementById('root'));
+  </script>
+</body>
+</html>
+
+
+
