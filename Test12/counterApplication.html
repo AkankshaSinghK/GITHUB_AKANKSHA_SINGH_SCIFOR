@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter Application</title>
+  <!-- Include React, ReactDOM, and Babel from CDN -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color:blanchedalmond;
+    }
+    .counter-container {
+      text-align: center;
+      background-color: #0ef;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .counter-container:hover {
+        box-shadow: 0 0 2rem #0ef;
+    }
+    
+    .counter-value {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-around;
+      gap: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .increment{
+        background-color: green;
+        color: white;
+    }
+
+    .decrement{
+        background-color: red;
+        color: white;
+    }
+
+    .reset{
+        background-color: yellow;
+        
+    }
+  </style>
+  
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+const { useState, useContext, createContext } = React;
+
+// Create a Context for the Counter
+const CounterContext = createContext();
+
+const CounterProvider = ({ children }) => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(0);
+
+  return (
+    <CounterContext.Provider value={{ count, increment, decrement, reset }}>
+      {children}
+    </CounterContext.Provider>
+  );
+};
+
+const CounterDisplay = () => {
+  const { count } = useContext(CounterContext);
+  return <div className="counter-value">Counter: {count}</div>;
+};
+
+const CounterControls = () => {
+  const { increment, decrement, reset } = useContext(CounterContext);
+  return (
+    <div className="button-group">
+        <button className="increment" onClick={increment}>Increment</button>
+        <button className="decrement" onClick={decrement}>Decrement</button>
+        <button className="reset" onClick={reset}>Reset</button>
+    </div>
+  );
+};
+
+const CounterApp = () => (
+  <CounterProvider>
+    <div className="counter-container">
+      <CounterDisplay />
+      <CounterControls />
+    </div>
+  </CounterProvider>
+);
+
+ReactDOM.render(<CounterApp />, document.getElementById('root'));
+
+  </script>
+
+</body>
+</html>
