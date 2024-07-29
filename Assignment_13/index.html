@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Root Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            color: green;
+        }
+        .error {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Square Root Calculator</h1>
+    <p>Enter a number to calculate its square root:</p>
+    <input type="text" id="numberInput">
+    <button onclick="calculateSquareRoot()">Calculate</button>
+    <div id="output"></div>
+
+    <script>
+        function calculateSquareRoot() {
+            let outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+            let numberInput = document.getElementById('numberInput').value;
+            let resultMessage = '';
+
+            try {
+                let number = parseFloat(numberInput);
+                if (isNaN(number)) {
+                    throw new Error('Input is not a valid number');
+                }
+                if (number < 0) {
+                    throw new Error('Cannot calculate the square root of a negative number');
+                }
+                let result = Math.sqrt(number);
+                resultMessage = `The square root of ${number} is ${result}`;
+
+                let resultDiv = document.createElement('div');
+                resultDiv.className = 'result';
+                resultDiv.textContent = resultMessage;
+                outputDiv.appendChild(resultDiv);
+            } catch (error) {
+                resultMessage = `Error: ${error.message}`;
+                let errorDiv = document.createElement('div');
+                errorDiv.className = 'error';
+                errorDiv.textContent = resultMessage;
+                outputDiv.appendChild(errorDiv);
+            }
+        }
+    </script>
+</body>
+</html>
