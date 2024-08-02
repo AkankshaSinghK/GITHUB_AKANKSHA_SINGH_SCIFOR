@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try catch block</title>
+  </head>
+  <body>
+    <script>
+      function divideNumbers() {
+        try {
+          // Prompt the user to enter two integers
+          let num1 = parseInt(prompt("Enter the first integer:"));
+          let num2 = parseInt(prompt("Enter the second integer:"));
+
+          // Check if the input is valid
+          if (isNaN(num1) || isNaN(num2)) {
+            throw new Error("Please enter valid integers.");
+          }
+
+          // Perform the division
+          if (num2 === 0) {
+            throw new Error("Division by zero is not allowed.");
+          }
+
+          let result = num1 / num2;
+
+          // Display the result
+          alert(`The result of dividing ${num1} by ${num2} is ${result}`);
+        } catch (error) {
+          // Handle any errors
+          alert(`Error: ${error.message}`);
+        }
+      }
+
+      // Call the function to execute the program
+      divideNumbers();
+    </script>
+  </body>
+</html>
